@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ComponentLoaderFactory } from '../component-loader';
 
 @Injectable()
 export class ModalOptions {
@@ -33,6 +34,7 @@ export class ModalOptions {
    * Modal data
    */
   initialState?: Object;
+  componentLoaderFactory: ComponentLoaderFactory;
 }
 
 
@@ -44,7 +46,8 @@ export const modalConfigDefaults: ModalOptions = {
   ignoreBackdropClick: false,
   class: '',
   animated: true,
-  initialState: {}
+  initialState: {},
+  componentLoaderFactory: null
 };
 
 export const CLASS_NAME: any = {
